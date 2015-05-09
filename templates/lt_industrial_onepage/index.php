@@ -21,7 +21,7 @@ if( $this->params->get('show_comingsoon') ) header("Location: ".$this->baseUrl."
         <jdoc:include type="head" />
         <?php
             $this->helix->Header()
-              ->addJS('fixed-menu.js') //fixed menu
+              ->addJS('menu.js') //fixed menu
               ->addJS('scroll.js') //scroll
             ->setLessVariables(array(
                     'preset'=>$this->helix->Preset(),
