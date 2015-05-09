@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>Donate Elite</name>
+	<author>Elite Developers</author>
+	<creationDate>August 2013</creationDate>
+	<copyright>Copyright (C) 2013 Elite Developers. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorEmail>admin@elitewebdev.com</authorEmail>
+	<authorUrl>www.elitewebdev.com</authorUrl>
+	<version>3.2.0</version>
+	<description><![CDATA[ <div style="color:#FFFFFF; background:#3A87AD; border:1px solid #B0DFFF; padding:10px;margin:10px; border-radius: 4px;"><div><a href="http://www.elitewebdev.com/extra/joomla/donate-elite" target="_blank" style="color:#FFFFFF;"><h2>Donate Elite</h2> <img src="http://www.elitewebdev.com/files/joomla/images/donateelite.png" alt="Donate Elite" width="110" height="79" /></a><br /><br /></div>- Access Module: Extensions >> Module Manager >> Donate Elite<br />- Configure Parameters<br />- Publish/Enable<br />- Assign to Menu Items<br />- Save.<br /><br />( Need Help ? Report a bug ? Request a new feature ? : <a href="http://www.elitewebdev.com/contact-us" target="_blank" style="color:#FFFFFF;">Click Here - Contact Us</a> )</div> ]]></description>
+	<files>
+		<filename module="mod_donate_elite">mod_donate_elite.php</filename>
+		<filename>index.html</filename>
+		<filename>license.txt</filename>
+		<folder>tmpl</folder>
+		<folder>fields</folder>
+    </files>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_donate_elite/fields">
+			<fieldset name="basic">
+				<field name="@bloc_top_a" type="a_bloc" start="1" label="Donate Elite"/>
+					<field name="@bloc_fir_a" type="a_bloc" start="1" />
+						<field name="use_sandbox" type="radio" class="btn-group" default="0" label="Use sandbox paypal" description="You can test the donation procedure with Paypal sandbox, fill in your sandbox seller email for testing">
+							<option value="1">Yes</option>
+							<option value="0">No</option>
+						</field>
+						<field name="@slide_nosand_a" type="a_slide" param="use_sandbox" value="0" />
+							<field name="business" type="text" size="32" default="" label="E-Mail/PayPal ID" description="Your registered PayPal e-mail address or PayPal ID" />
+						<field name="@slide_nosand_b" type="a_slide" />
+						<field name="@slide_sand_a" type="a_slide" param="use_sandbox" value="1" />
+							<field name="sandbox" type="text" size="32" default="" label="Sandbox E-Mail/PayPal ID" description="Your registered Sandbox PayPal e-mail address or PayPal ID" />
+						<field name="@slide_sand_b" type="a_slide" />
+					<field name="@bloc_fir_b" type="a_bloc" end="1" />
+					<field name="@bloc_inf_a" type="a_bloc" start="1" />
+						<field name="item_name" type="text" size="64" default="Donation" label="Payment Reason" description="The reason of your donations. Will be printed on the PayPal confirmation" />
+						<field name="return" type="URL" size="64" default="http://" label="Success return page" description="Full path to the return page after a correct payment" />
+						<field name="cancel_return" type="URL" size="64" default="http://" label="Cancel return page" description="Full path to the return page after a failed payment" />
+						<field name="image_url" type="text" size="64" default="" label="Company Logo URL" description="Full path to the company logo image" />
+						<field name="pp_image" type="text"  size="64" default="btn_donateCC_LG.gif" label="Paypal button image" description="Sets the PayPal button image. " />
+						<field name="pp_image" type="list" default="btn_donateCC_LG.gif" label="Paypal button image" description="Sets the PayPal button image.">
+							<option value="btn_donateCC_LG.gif">btn_donateCC_LG.gif</option>
+							<option value="btn_donate_LG.gif">btn_donate_LG.gif</option>
+							<option value="btn_donate_SM.gif">btn_donate_SM.gif</option>
+							<option value="x-click-but11.gif">x-click-but11.gif</option>
+							<option value="x-click-but21.gif">x-click-but21.gif</option>							
+							<option value="x-click-butcc-donate.gif">x-click-butcc-donate.gif</option>
+							<option value="x-click-but04.gif">x-click-but04.gif</option>
+						</field>
+						<field name="locale" type="list" default="en_US" label="Language donation logo" description="Sets the language for the paypal donation logo">
+							<option value="en_US">en_US</option>
+							<option value="it_IT/IT">it_IT</option>
+							<option value="de_DE/DE">de_DE</option>
+							<option value="fr_FR">fr_FR</option>
+							<option value="es_ES">es_ES</option>
+							<option value="nl_NL/NL">nl_NL</option>
+							<option value="pt_BR/BR">pt_BR</option>
+							<option value="da_DK/DK">da_DK</option>
+							<option value="zh_HK">zh_HK</option>
+							<option value="ja_JP/JP">ja_JP</option>
+							<option value="ru_RU">ru_RU</option>
+							<option value="he_IL">he_IL</option>
+						</field>
+					<field name="@bloc_inf_b" type="a_bloc" end="1" />
+					<field name="@bloc_blkad_a" type="a_bloc" start="1"/>
+						<field name="show_amount" type="radio" class="btn-group" default="1" label="Show amount field" description="Shows an editable amount field.">
+							<option value="1">Yes</option>
+							<option value="0">No</option>
+						</field>
+						<field name="@slide_amount_a" type="a_slide" param="show_amount" value="0" />
+							<field name="amount" type="text" size="5" default="" label="Amount" description="Sets the amount for the donation. Leave empty if user has to write the amount himself" />
+						<field name="@slide_amount_b" type="a_slide" />
+						<field name="currencies" type="text" size="64" maxlength="100" default="EUR,USD,GBP,CHF,AUD,HKD,CAD,JPY,NZD,SGD,SEK,DKK,PLN,NOK,HUF,CZK,ILS,MXN" label="Currencies" description="Displays a combo so that users can select the preferred currency. Separate with comma , symbol, first currency will be the default one. Valid currencies: EUR,USD,GBP,CHF,AUD,HKD,CAD,JPY, NZD,SGD,SEK,DKK,PLN,NOK,HUF,CZK, ILS,MXN" />
+					<field name="@bloc_blkad_b" type="a_bloc" end="1" />
+					<field name="@bloc_bot_a" type="a_bloc" start="1" />
+						<field name="show_text" type="radio" class="btn-group" default="1" label="Show intro text" description="Shows an introductory text">
+							<option value="1">Yes</option>
+							<option value="0">No</option>
+						</field>	
+						<field name="@slide_intro_a" type="a_slide" param="show_text" value="1" />
+							<field name="intro_text" label="Introduction text" type="textarea" rows="3" cols="35" default="Thank you for your donation." />
+						<field name="@slide_intro_b" type="a_slide" />
+						<field name="open_new_window" type="radio" class="btn-group" default="1" label="Open new window" description="Opens the PayPal site as a new window">
+							<option value="1">Yes</option>
+							<option value="0">No</option>
+						</field>
+					<field name="@bloc_bot_b" type="a_bloc" end="1" />
+					<field name="@bloc_adv_a" type="a_bloc" start="1" />
+						<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+						<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+							<option	value="1">JGLOBAL_USE_GLOBAL</option>
+							<option	value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+						</field>
+						<field name="@slide_cache_a" type="a_slide" param="cache" value="1" />
+							<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+							<field name="cachemode" type="hidden" default="static">
+								<option value="static"></option>
+							</field>
+						<field name="@slide_cache_b" type="a_slide" />
+					<field name="@bloc_adv_b" type="a_bloc" end="1" />
+				<field name="@bloc_top_b" type="a_bloc" end="1" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="module" type="hidden" default="donate" />
+				<field name="fields" type="hidden" default="fields/bloc.php" />
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Donate Elite Module Update Server">http://www.elitewebdev.com/files/joomla/extensions/donate_elite/1/xmls/updatemod.xml</server>
+	</updateservers>
+</extension>

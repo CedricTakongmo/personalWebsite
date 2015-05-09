@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="template" client="site" method="upgrade">
+    <name>lt_industrial_onepage</name>
+    <creationDate>May 2014</creationDate>
+    <author>LTheme.com</author>
+    <authorEmail>admin@ltheme.com</authorEmail>
+    <authorUrl>http://www.ltheme.com</authorUrl>
+    <copyright>Copyright (C) 2010 - 2014 LTheme.com. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later</license>
+    <version>1.0</version>
+    <description>
+        <![CDATA[
+            <h3>LT Industrial - Onepage Joomla! Template</h3>
+        ]]>
+    </description>
+    <languages>
+        <language tag="en-GB">en-GB.tpl_lt_industrial_onepage.ini</language>
+    </languages>
+    <positions>
+        <position>logo</position>
+        <position>contact</position>
+        <position>menu</position>
+        <position>social</position>
+        <position>breadcrumb</position>
+        <position>subheader</position>      
+        <position>slider</position>
+        <position>slide</position>
+        <position>action</position>
+        <position>portfolio</position>
+        <position>hiring</position>
+        <position>promo</position>
+        <position>left</position>
+        <position>right</position>
+        <position>clients</position>
+        <position>feature</position>
+        <position>variation1</position>
+        <position>variation2</position>
+        <position>variation3</position>
+        <position>position1</position>
+        <position>position2</position>
+        <position>position3</position>
+        <position>position4</position>
+        <position>position5</position>
+        <position>position6</position>
+        <position>position7</position>
+        <position>position8</position>
+        <position>bottom1</position>
+        <position>bottom2</position>
+        <position>bottom3</position>
+        <position>bottom4</position>
+        <position>bottom5</position>
+        <position>bottom6</position>
+        <position>bottom7</position>
+        <position>bottom8</position>        
+        <position>footer1</position>
+        <position>footer2</position>
+        <position>preset</position>
+        <position>search</position>
+    </positions>
+    
+    <files>
+        <file>index.html</file>
+        <file>index.php</file>
+        <file>favicon.ico</file>
+        <file>template_preview.png</file>
+        <file>template_thumbnail.png</file>
+        <file>templateDetails.xml</file>
+        <file>error.php</file>
+        <file>offline.php</file>
+        <file>component.php</file>
+        <folder>css/</folder>
+        <folder>html/</folder>
+        <folder>images/</folder>
+        <folder>js/</folder>
+        <folder>layout/</folder>
+    </files>
+    <config>
+        <fields name="params">
+
+            <fieldset name="overviews" addfieldpath="/plugins/system/helix/fields">
+                <field type="asset" />
+                <field type="include" file="overview.php" />
+            </fieldset>
+
+            <fieldset name="basic" addfieldpath="/plugins/system/helix/fields">
+            
+                <field type="group" title="LAYOUT" />
+                 <!-- layout type -->
+                <field name="layout_width" type="list" default="1170" label="WIDTH">
+                    <option value="1170">1170 (px)</option>
+                    <option value="960">960 (px)</option>
+                </field>
+                <field name="layout_type" type="radio" default="responsive" label="TYPE">
+                    <option value="responsive">Responsive</option>
+                    <option value="fixed">Fixed</option>
+                </field>
+
+                <field type="group" title="LOGO" />
+                <!-- logo type -->
+                <field name="logo_type" class="parent logotype" type="radio" default="image" label="TYPE">
+                    <option value="image">Image</option>
+                    <option value="text">Text</option>
+                    <option value="no">None</option>
+                </field>
+                <field name="logo_position" class="child logotype logotype_image logotype_text" type="modpos" default="logo" client_id="0" label="POSITION" maxlength="50" />
+
+                <!-- logo image -->
+                <field name="logo_type_image" class="child logotype logotype_image" type="media" preview="true" label="IMAGE" />
+
+                <!-- logo text -->
+                <field name="logo_type_text" class="child logotype logotype_text" type="text" default="LT Industrial " label="TEXT" />
+                <field name="logo_type_slogan" class="child logotype logotype_text" type="text" default="Joomla! Industrial template" label="SLOGAN" />
+
+                <!-- logo width, height -->
+                <field name="logo_width" size="40" class="child logotype logotype_image logotype_text logotype_css" type="text" default="115" label="WIDTH" />
+                <field name="logo_height" size="40" class="child logotype logotype_image logotype_text logotype_css" type="text" default="70" label="HEIGHT" />               
+            </fieldset>
+             <!--End Basic Tab-->
+             
+            <fieldset name="preset"  addfieldpath="/plugins/system/helix/fields">
+                <field type="group" title="PRESET" />
+
+                <field name="preset" type="presets"  default="preset1" label="PRESET" />
+
+                <field type="group" title="PRESET_SETTINGS" />
+                
+                <!--Start Preset1-->
+                <field name="preset1_title" class="preset1" type="picker" default="#333333" label="Title Color" />
+                <field name="preset1_bg" class="preset1" type="picker" default="#ffffff" label="Background Color" />
+                <field name="preset1_text" class="preset1" type="picker" default="#666666" label="Text Color" />
+                <field name="preset1_link" class="preset1" type="picker" default="#0db3c7" label="Link Color" />
+                <!--End Preset1-->
+                
+                <!--Start Preset2-->
+                <field name="preset2_title" class="preset2" type="picker" default="#333333" label="Title Color" />
+                <field name="preset2_bg" class="preset2" type="picker" default="#ffffff" label="Background Color" />
+                <field name="preset2_text" class="preset2" type="picker" default="#444444" label="Text Color" />
+                <field name="preset2_link" class="preset2" type="picker" default="#f7ca18" label="Link Color" />
+                <!--End Preset 2-->
+                
+                <!--Start Preset3-->
+                <field name="preset3_title" class="preset3" type="picker" default="#333333" label="Title Color" />
+                <field name="preset3_bg" class="preset3" type="picker" default="#ffffff" label="Background Color" />
+                <field name="preset3_text" class="preset3" type="picker" default="#666666" label="Text Color" />
+                <field name="preset3_link" class="preset3" type="picker" default="#20c55a" label="Link Color" />
+                <!--End Preset 3--> 
+
+                <!--Start Preset 4-->
+                <field name="preset4_title" class="preset4" type="picker" default="#333333" label="Title Color" />
+                <field name="preset4_bg" class="preset4" type="picker" default="#ffffff" label="Background Color" />
+                <field name="preset4_text" class="preset4" type="picker" default="#666666" label="Text Color" />
+                <field name="preset4_link" class="preset4" type="picker" default="#304559" label="Link Color" />
+                <!--End Preset 4--> 
+
+                <!--Start Preset 5-->
+                <field name="preset5_title" class="preset5" type="picker" default="#333333" label="Title Color" />
+                <field name="preset5_bg" class="preset5" type="picker" default="#ffffff" label="Background Color" />
+                <field name="preset5_text" class="preset5" type="picker" default="#666666" label="Text Color" />
+                <field name="preset5_link" class="preset5" type="picker" default="#ef4836" label="Link Color" />
+                <!--End Preset 5--> 
+
+                <!--Start Preset 6-->
+                <field name="preset6_title" class="preset6" type="picker" default="#333333" label="Title Color" />
+                <field name="preset6_bg" class="preset6" type="picker" default="#ffffff" label="Background Color" />
+                <field name="preset6_text" class="preset6" type="picker" default="#666666" label="Text Color" />
+                <field name="preset6_link" class="preset6" type="picker" default="#913D88" label="Link Color" />
+                <!--End Preset 6--> 
+
+            </fieldset>
+            <!--End Preset-->
+            
+            <fieldset name="layout" addfieldpath="/plugins/system/helix/fields">
+                <field type="layout" name="layout" />
+            </fieldset>
+          <!--End Layout--> 
+
+            <!--Start Menu Tab-->
+            <fieldset name="menu">
+
+                <field type="group" title="Select Menu" />
+                <field name="menu" type="menu" default="mainmenu" label="" />
+                <field type="group" title="Menu Settings" />
+
+                <field name="menutype" type="list" default="mega" label="MENU_TYPE">
+                    <option value="mega">Mega Menu</option>
+                    <option value="drop">Dropline Menu</option>
+                    <option value="split">Split Menu</option>
+                </field>
+
+                <field name="menu_col_width" type="text" default="200" label="DROP_COL_WIDTH" />
+                <field name="show_menu_image" class="parent menuimage" type="radio" default="1" label="SHOW_MENU_IMAGE">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+
+                <field name="menu_image_position" class="child menuimage menuimage_1" type="radio" default="1" label="MENU_IMAGE_POSITION">
+                    <option value="0">Background Image</option>
+                    <option value="1">Image Source</option>
+                </field>
+
+                <field name="submenu_position" type="list" default="0" label="Submenu Position">
+                    <option value="0">Default</option>
+                    <option value="1">Center</option>
+                </field>
+
+                <field type="group" title="Menu Offsets" />
+                <field name="init_x" type="text" default="0" label="X_OFFSET1" />
+                <field name="init_y" type="text" default="0" label="Y_OFFSET1" />
+                <field name="sub_x" type="text" default="0" label="X_OFFSET2" />
+                <field name="sub_y" type="text" default="0" label="Y_OFFSET2" />
+            </fieldset>
+            <!--End Menu Tab-->
+
+            <!--Start Font Tab-->
+            <fieldset name="fonts">
+                <field type="group" title="Body Font" />
+                    <field name="body_font" type="text" default="Raleway" label="BODY_FONT" />
+                    <field name="body_selectors" type="textarea" rows="6" cols="30" label="SELECTORS" />
+                <field type="group" title="Header Font" />
+                    <field name="header_font" type="text" default="Raleway" label="HEADER_FONT" />
+                    <field name="header_selectors" type="textarea" default="" rows="6" cols="30" label="SELECTORS" />
+                <field type="group" title="Others Font"  />
+                    <field name="other_font" type="text" default="" label="OTHER_FONT" />
+                    <field name="other_selectors" type="textarea" rows="6" cols="30" label="SELECTORS" />
+            </fieldset>
+            <!--End Font Tab-->
+
+            <!--Start Advanced Tab-->
+            <fieldset name="advanced">
+                <field type="group" title="CACHE_SETTINGS" />
+                <field name="cache_time" size="40" type="text" default="60" label="CACHE_TIME" />
+                <field name="compress_css" type="radio" default="0" label="CSS_COMPRESS">
+                    <option value="0">Disable</option>
+                    <option value="1">Enable</option>
+                </field>
+                <field name="compress_js" type="radio" default="0" label="JS_COMPRESS">
+                    <option value="0">Disable</option>
+                    <option value="1">Enable</option>
+                </field>
+                <field type="group" title="LINE_GA" />
+                <field name="enable_ga" class="parent analytics" type="radio" default="0" label="Enable">
+                    <option value="0">No</option>
+                    <option value="1">YES</option>
+                </field>
+                <field name="ga_code" class="child analytics analytics_1" type="text" default="" label="GA_CODE" />
+                
+                <field type="group" title="LOAD_JQUERY" />
+                <field name="loadjquery" class="parent loadjquery" type="radio" default="0" label="FORCE_LOAD">
+                    <option value="0">No</option>
+                    <option value="1">YES</option>
+                </field>
+                
+                <field name="loadfromcdn" class="child loadjquery loadjquery_1" type="radio" default="0" label="USE_CDN">
+                    <option value="0">No</option>
+                    <option value="1">YES</option>
+                </field>
+                
+                <field type="group" title="COMPONENT_AREA" />
+                <field name="hide_component_area" class="" type="radio" default="0" label="HIDE_FRONTPAGE">             
+                    <option value="0">No</option>
+                    <option value="1">YES</option>
+                </field>
+                <!--End Advanced Tab-->
+
+            </fieldset>
+        </fields>
+    </config>
+</extension>
